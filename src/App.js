@@ -3,8 +3,10 @@ import {
   BrowserRouter as Router,
   Route,
   Link, 
-  Redirect, Switch,
-  withRouter
+  Redirect,
+  withRouter,
+  Switch,
+  NavLink
 } from "react-router-dom";
 
 class App extends Component{
@@ -48,9 +50,9 @@ class App extends Component{
       <Router>
         <div>
           <ul style={{listStyle: 'none'}}>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/news'>News</Link></li>
-            <li><Link to='/profile'>Profile</Link></li>
+            <li><NavLink exact activeStyle={{fontWeight: 'bold', color: 'red'}} to='/'>Home</NavLink></li>
+            <li><NavLink activeClassName='active-link' to='/news'>News</NavLink></li>
+            <li><NavLink activeClassName='active-link' to='/profile'>Profile</NavLink></li>
           </ul>
             <Switch>
             {
